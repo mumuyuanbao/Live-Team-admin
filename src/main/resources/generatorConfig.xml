@@ -8,7 +8,7 @@
     <properties resource="db.properties"/>
 
     <!--指定特定数据库的jdbc驱动jar包的位置-->
-<!--    <classPathEntry location="/Users/mac/mavenJar/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar"/>-->
+    <classPathEntry location="/Users/mac/mavenJar/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar"/>
 
     <context id="default" targetRuntime="MyBatis3">
 
@@ -20,9 +20,9 @@
         <!--jdbc的数据库连接 -->
         <jdbcConnection
                 driverClass="com.mysql.jdbc.Driver"
-                connectionURL="${url}"
-                userId="${username}"
-                password="${password}">
+                connectionURL="jdbc:mysql://47.94.157.36:3306/live_team?characterEncoding=utf-8"
+                userId="root"
+                password="Lin1997426520.">
         </jdbcConnection>
 
 
@@ -37,7 +37,7 @@
             targetProject     指定在该项目下所在的路径
         -->
         <!--<javaModelGenerator targetPackage="com.mmall.pojo" targetProject=".\src\main\java">-->
-        <javaModelGenerator targetPackage="com.live.liveteam.entity" targetProject="./src/main/java">
+        <javaModelGenerator targetPackage="com.liveteam.live.team.admin.entity" targetProject="./src/main/java">
             <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
             <property name="enableSubPackages" value="false"/>
             <!-- 是否对model添加 构造函数 -->
@@ -61,13 +61,13 @@
         -->
 
         <!-- targetPackage：mapper接口dao生成的位置 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.live.liveteam.mapper" targetProject="./src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.liveteam.live.team.admin.mapper" targetProject="./src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
 
 
-        <table tableName="adminstrator" domainObjectName="User" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true" enableSelectByPrimaryKey="true"
+        <table tableName="goods" domainObjectName="Goods" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true" enableSelectByPrimaryKey="true"
                enableUpdateByPrimaryKey="true"
                enableDeleteByPrimaryKey="true"/>
 

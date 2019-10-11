@@ -21,7 +21,7 @@ public class PageVO<T> {
 
     private Integer size = BizConstant.PAGE_SIZE_20;//
 
-    private Integer pages ;
+    private Integer pages ;//总页数
 
     private List<T> data;// 查询结果
 
